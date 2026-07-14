@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карманный Доктор — ИИ-разбор симптомов и анализов в кармане</title>
+<meta name="description" content="Карманный Доктор — мобильное приложение с ИИ-анализом симптомов и медицинских анализов. Понятный разбор за секунды, история консультаций, забота о приватности.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Карманный Доктор — ИИ-разбор симптомов и анализов в кармане">
+<meta property="og:description" content="Опишите симптомы или приложите фото анализа — ИИ разберёт ситуацию простым языком за 30 секунд. Приватность, история консультаций, честные оговорки.">
+<meta property="og:image" content="img/consultation-teal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Карманный Доктор — ИИ-разбор симптомов и анализов в кармане">
+<meta name="twitter:description" content="Опишите симптомы или приложите фото анализа — ИИ разберёт ситуацию простым языком за 30 секунд.">
+<meta name="twitter:image" content="img/consultation-teal.png">
+<link rel="icon" type="image/png" href="img/icon.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal-900:#07171a;
+  --teal-800:#0b2226;
+  --teal-700:#0e3236;
+  --teal-600:#146066;
+  --teal-500:#1a8a8f;
+  --mint:#5ee0c6;
+  --mint-soft:#a6f0de;
+  --ink:#eafffa;
+  --muted:#9fc4c2;
+  --card:#0d2a2d;
+  --card-brd:rgba(94,224,198,0.14);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(94,224,198,0.16), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(20,96,102,0.35), transparent 60%),
+    var(--teal-900);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:200;background:rgba(7,23,26,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-brd)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:11px;box-shadow:0 4px 16px rgba(94,224,198,0.35)}
+.brand-txt{font-size:17px;font-weight:800;letter-spacing:0.2px}
+nav.links{display:flex;align-items:center;gap:32px}
+nav.links a{text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:600;transition:color .2s}
+nav.links a:hover{color:var(--mint)}
+.btn-nav{background:linear-gradient(135deg,var(--mint),var(--teal-500));color:#062022;padding:10px 22px;border-radius:9px;font-weight:800;font-size:13.5px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(94,224,198,0.28);transition:transform .2s,box-shadow .2s}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(94,224,198,0.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+
+/* ---------- hero ---------- */
+.hero{padding:96px 0 60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(94,224,198,0.09);border:1px solid var(--card-brd);color:var(--mint);font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:20px;margin-bottom:26px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
+h1{font-size:46px;line-height:1.16;font-weight:900;margin-bottom:22px;letter-spacing:-0.5px}
+h1 .grad{background:linear-gradient(90deg,var(--mint),var(--mint-soft));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.lead{font-size:18px;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:36px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--mint),var(--teal-500));color:#062022;font-weight:800;padding:16px 30px;border-radius:11px;font-size:15.5px;text-decoration:none;box-shadow:0 10px 30px rgba(94,224,198,0.32);transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(94,224,198,0.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--card-brd);color:var(--ink);padding:15px 26px;border-radius:11px;font-size:15px;font-weight:700;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-ghost:hover{border-color:var(--mint);background:rgba(94,224,198,0.06)}
+.trust-row{display:flex;gap:28px;flex-wrap:wrap;color:var(--muted);font-size:13.5px}
+.trust-row span{display:flex;align-items:center;gap:8px}
+.trust-row b{color:var(--ink)}
+
+.hero-visual{position:relative;display:flex;justify-content:center}
+.phone-glow{position:absolute;inset:-40px;background:radial-gradient(circle at 50% 40%, rgba(94,224,198,0.35), transparent 65%);filter:blur(10px);z-index:0}
+.phone-frame{position:relative;z-index:1;width:270px;border-radius:34px;overflow:hidden;border:6px solid #0a1f22;box-shadow:0 30px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(94,224,198,0.18);transform:rotate(-3deg)}
+.phone-frame img{display:block;width:100%}
+.floaty{animation:floaty 5s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-14px)}}
+
+/* ---------- section shell ---------- */
+section{padding:90px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.section-lbl{display:inline-block;color:var(--mint);font-size:12.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.section-head h2{font-size:32px;font-weight:900;margin-bottom:14px;letter-spacing:-0.3px}
+.section-head p{color:var(--muted);font-size:16px;line-height:1.7}
+
+/* ---------- how it works ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--card);border:1px solid var(--card-brd);border-radius:18px;padding:32px 28px;position:relative}
+.step-num{font-size:14px;font-weight:900;color:#062022;background:linear-gradient(135deg,var(--mint),var(--mint-soft));width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.step h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.step p{color:var(--muted);font-size:14.5px;line-height:1.7}
+
+/* ---------- features ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat{background:var(--card);border:1px solid var(--card-brd);border-radius:16px;padding:26px 24px;transition:transform .25s,border-color .25s}
+.feat:hover{transform:translateY(-4px);border-color:rgba(94,224,198,0.4)}
+.feat .ico{width:44px;height:44px;border-radius:12px;background:rgba(94,224,198,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+.feat h4{font-size:15.5px;font-weight:800;margin-bottom:8px}
+.feat p{color:var(--muted);font-size:13.8px;line-height:1.65}
+
+/* ---------- screenshots ---------- */
+.shots-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:end}
+.shot-card{text-align:center}
+.shot-card img{width:100%;border-radius:22px;border:5px solid #0a1f22;box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+.shot-card .cap{margin-top:16px;color:var(--muted);font-size:13.5px;font-weight:600}
+.shot-card .cap b{color:var(--mint)}
+
+/* ---------- safety ---------- */
+.safety{background:linear-gradient(135deg, rgba(20,96,102,0.35), rgba(11,34,38,0.6));border:1px solid var(--card-brd);border-radius:22px;padding:44px}
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.safety h3{font-size:20px;font-weight:800;margin-bottom:14px}
+.safety p{color:var(--muted);font-size:14.5px;line-height:1.8}
+.safety .emergency{background:rgba(255,255,255,0.04);border:1px solid rgba(255,120,120,0.25);border-radius:14px;padding:20px 22px;margin-top:18px}
+.safety .emergency b{color:#ff9a9a}
+
+/* ---------- pricing ---------- */
+.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:0 auto}
+.price-card{background:var(--card);border:1px solid var(--card-brd);border-radius:18px;padding:34px 30px}
+.price-card.hi{border-color:var(--mint);box-shadow:0 0 0 1px var(--mint) inset, 0 20px 50px rgba(94,224,198,0.12)}
+.price-card h4{font-size:16px;font-weight:800;margin-bottom:6px}
+.price-card .amt{font-size:30px;font-weight:900;color:var(--mint);margin:14px 0}
+.price-card .amt span{font-size:14px;color:var(--muted);font-weight:600}
+.price-card ul{list-style:none;color:var(--muted);font-size:14px;line-height:2.1}
+.price-card ul li::before{content:"✓ ";color:var(--mint);font-weight:900}
+.price-note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
+
+/* ---------- waitlist ---------- */
+.waitlist{background:var(--card);border:1px solid var(--card-brd);border-radius:22px;padding:52px;text-align:center;max-width:640px;margin:0 auto}
+.waitlist h2{font-size:28px;font-weight:900;margin-bottom:12px}
+.waitlist p{color:var(--muted);font-size:15px;margin-bottom:30px;line-height:1.7}
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.form-row input{flex:1;min-width:200px;background:rgba(255,255,255,0.04);border:1px solid var(--card-brd);border-radius:10px;padding:14px 16px;color:var(--ink);font-size:14.5px}
+.form-row input::placeholder{color:var(--muted)}
+.form-row input:focus{outline:none;border-color:var(--mint)}
+.waitlist form{display:flex;flex-direction:column;gap:14px}
+.btn-submit{background:linear-gradient(135deg,var(--mint),var(--teal-500));color:#062022;font-weight:800;padding:16px;border:none;border-radius:10px;font-size:15.5px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(94,224,198,0.35)}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:14px}
+
+footer{border-top:1px solid var(--card-brd);padding:36px 0;text-align:center;color:var(--muted);font-size:13px}
+footer a{color:var(--mint);text-decoration:none;font-weight:700}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+.reveal-in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1;margin-bottom:20px}
+  .steps,.feat-grid,.shots-strip,.safety-grid,.price-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  nav.links{display:none}
+  nav.links.open{
+    display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+    position:fixed;top:78px;left:0;right:0;z-index:199;
+    background:rgba(7,23,26,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--card-brd);padding:22px 24px 28px;
+  }
+  nav.links.open a{width:100%;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:16px}
+  nav.links.open a:last-child{border-bottom:none}
+  nav.links.open a.btn-nav{text-align:center;margin-top:8px;padding:14px 0}
+  .hamburger{display:flex}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  h1{font-size:32px}
+  .hero{padding:56px 0 40px}
+  section{padding:60px 0}
+  .waitlist{padding:32px 22px}
+  .safety{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <img src="img/icon.png" alt="Карманный Доктор">
+      <span class="brand-txt">Карманный Доктор</span>
+    </a>
+    <nav class="links">
+      <a href="#how">Как работает</a>
+      <a href="#features">Возможности</a>
+      <a href="#screens">Экраны</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#waitlist" class="btn-nav">Ранний доступ</a>
+    </nav>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Скоро в Google Play</div>
+      <h1>Симптомы понятны за <span class="grad">30 секунд</span>, а не после часа в интернете</h1>
+      <p class="lead">Опишите словами, что беспокоит, или приложите фото анализа — приложение на ИИ разберёт ситуацию простым языком и подскажет, что делать дальше и к какому врачу идти.</p>
+      <div class="hero-cta">
+        <a href="#waitlist" class="btn-primary">Получить ранний доступ →</a>
+        <a href="#how" class="btn-ghost">Как это работает ↓</a>
+      </div>
+      <div class="trust-row">
+        <span>🔒 <b>Данные</b> хранятся только на устройстве</span>
+        <span>🩺 <b>Не заменяет</b> врача — помогает сориентироваться</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-glow"></div>
+      <div class="phone-frame floaty"><img src="img/consultation-teal.png" alt="Экран консультации Карманного Доктора"></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-lbl">Как это работает</div>
+      <h2>Три шага от вопроса до ясности</h2>
+      <p>Никаких форумов и статей "по симптомам может быть что угодно" — только конкретный, персональный разбор вашей ситуации.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Опишите, что беспокоит</h3>
+        <p>Текстом — своими словами, как рассказали бы другу. Или приложите фото анализа крови, выписки, снимка.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>ИИ разбирает ситуацию</h3>
+        <p>Нейросеть анализирует симптомы и документы, ищет закономерности и объясняет их простым языком, без медицинского жаргона.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Понятный план действий</h3>
+        <p>Что это может значить, насколько это срочно и к какому врачу обращаться. Если похоже на неотложный случай — прямая рекомендация звонить 103 или 112.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-lbl">Возможности</div>
+      <h2>Всё нужное — без лишнего</h2>
+      <p>Приложение спроектировано так, чтобы в тревожный момент ничего не отвлекало от главного вопроса: что со мной происходит.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ico">🧠</div><h4>ИИ-разбор симптомов и файлов</h4><p>Понимает текст, PDF, JPG и PNG — можно приложить фото анализа прямо из галереи.</p></div>
+      <div class="feat"><div class="ico">📋</div><h4>Чистый результат без мусора</h4><p>Таблицы и списки от нейросети превращаются в аккуратные, понятные строки — читать легко даже уставшим глазами.</p></div>
+      <div class="feat"><div class="ico">🕐</div><h4>История консультаций</h4><p>Все прошлые разборы — под рукой, чтобы отследить, как менялось состояние со временем.</p></div>
+      <div class="feat"><div class="ico">🎨</div><h4>Три темы оформления</h4><p>Бирюзовая, синяя и тёмная — с фирменным волновым фоном. Выбирайте, что приятнее глазу.</p></div>
+      <div class="feat"><div class="ico">🔒</div><h4>Приватность по умолчанию</h4><p>Все данные хранятся локально, на самом устройстве — не в чужом облаке.</p></div>
+      <div class="feat"><div class="ico">✅</div><h4>Честные оговорки</h4><p>На каждом экране — прямое напоминание: это помощник для ориентира, а не замена визита к врачу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-lbl">Как выглядит</div>
+      <h2>Один и тот же разбор — в удобном вам стиле</h2>
+    </div>
+    <div class="shots-strip">
+      <div class="shot-card">
+        <img src="img/consultation-blue.png" alt="Синяя тема">
+        <div class="cap">Тема <b>«Синяя»</b></div>
+      </div>
+      <div class="shot-card">
+        <img src="img/history.png" alt="История консультаций">
+        <div class="cap">Экран <b>«История»</b></div>
+      </div>
+      <div class="shot-card">
+        <img src="img/consultation-dark.png" alt="Тёмная тема">
+        <div class="cap">Тема <b>«Тёмная»</b></div>
+      </div>
+      <div class="shot-card">
+        <img src="img/profile.png" alt="Профиль пользователя">
+        <div class="cap">Экран <b>«Профиль»</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <div class="safety">
+      <div class="safety-grid">
+        <div>
+          <h3>🔒 Ваши данные — только ваши</h3>
+          <p>Симптомы, файлы анализов и история консультаций хранятся локально на устройстве. Мы не передаём и не продаём личные медицинские данные третьим лицам.</p>
+        </div>
+        <div>
+          <h3>🩺 Это помощник, а не диагноз</h3>
+          <p>Карманный Доктор помогает сориентироваться и подготовиться к визиту к врачу — он не ставит диагнозы и не заменяет медицинскую консультацию.</p>
+          <div class="emergency">Если ситуация похожа на неотложную — приложение прямо скажет об этом. Также помните: <b>103</b> (скорая) и <b>112</b> (единый номер экстренных служб) работают всегда.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-lbl">Тарифы</div>
+      <h2>Начните бесплатно</h2>
+      <p>Приложение сейчас на внутреннем тестировании — публичный релиз ещё не состоялся. Цены уже определены и зафиксированы для запуска.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h4>Бесплатный план</h4>
+        <div class="amt">0 ₽</div>
+        <ul><li>5 первых консультаций</li><li>Полный ИИ-разбор</li><li>История сохраняется</li></ul>
+      </div>
+      <div class="price-card hi">
+        <h4>Подписка</h4>
+        <div class="amt">199 ₽ <span>/ мес</span></div>
+        <ul><li>Безлимитные консультации</li><li>Полная история</li><li>Приоритетный сервер</li></ul>
+      </div>
+    </div>
+    <p class="price-note">Оформление подписки откроется после публичного релиза в Google Play.</p>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="wrap">
+    <div class="waitlist">
+      <h2>Узнайте о запуске первыми</h2>
+      <p>Оставьте контакт — напишем, как только приложение станет доступно для скачивания, и дадим ранний доступ до официального релиза.</p>
+      <form action="https://formsubmit.co/newlife2506@yandex.ru" method="POST">
+        <input type="hidden" name="_subject" value="Ранний доступ — Карманный Доктор">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="text" name="contact" placeholder="Telegram или email" required>
+        </div>
+        <button type="submit" class="btn-submit">Записаться на ранний доступ →</button>
+      </form>
+      <div class="form-note">Никакого спама — только одно сообщение о запуске.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Карманный Доктор &nbsp;·&nbsp; Разработано командой <a href="https://omdigital-gif.github.io" target="_blank" rel="noopener">OM-Digital</a> &nbsp;·&nbsp; © 2026
+  </div>
+</footer>
+
+<script>
+document.querySelector('.hamburger')?.addEventListener('click', function(){
+  this.classList.toggle('open');
+  document.querySelector('nav.links').classList.toggle('open');
+});
+document.querySelectorAll('nav.links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.querySelector('.hamburger')?.classList.remove('open');
+    document.querySelector('nav.links')?.classList.remove('open');
+  });
+});
+
+if ('IntersectionObserver' in window) {
+  var revealTargets = document.querySelectorAll('.step,.feat,.shot-card,.price-card,.safety,.waitlist');
+  revealTargets.forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealTargets.forEach(function(el){ io.observe(el); });
+}
+</script>
+</body>
+</html>
