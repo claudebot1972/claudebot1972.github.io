@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>«До приёма врача» — ИИ-разбор симптомов и анализов в кармане</title>
-<meta name="description" content="«До приёма врача» — мобильное приложение с ИИ-анализом симптомов и медицинских анализов. Понятный разбор за секунды, история консультаций, забота о приватности.">
+<title>«Доктор ИИ» — ИИ-разбор симптомов и анализов в кармане</title>
+<meta name="description" content="«Доктор ИИ» — мобильное приложение с ИИ-анализом симптомов и медицинских анализов. Понятный разбор за секунды, история консультаций, забота о приватности.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="«До приёма врача» — ИИ-разбор симптомов и анализов в кармане">
+<meta property="og:title" content="«Доктор ИИ» — ИИ-разбор симптомов и анализов в кармане">
 <meta property="og:description" content="Опишите симптомы или приложите фото анализа — ИИ разберёт ситуацию простым языком за 30 секунд. Приватность, история консультаций, честные оговорки.">
 <meta property="og:image" content="img/consultation-teal.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="«До приёма врача» — ИИ-разбор симптомов и анализов в кармане">
+<meta name="twitter:title" content="«Доктор ИИ» — ИИ-разбор симптомов и анализов в кармане">
 <meta name="twitter:description" content="Опишите симптомы или приложите фото анализа — ИИ разберёт ситуацию простым языком за 30 секунд.">
 <meta name="twitter:image" content="img/consultation-teal.png">
 <link rel="icon" type="image/png" href="img/icon.png">
@@ -119,7 +119,10 @@ section{padding:90px 0}
 .safety .emergency b{color:#ff9a9a}
 
 /* ---------- pricing ---------- */
-.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:0 auto}
+/* auto-fit + justify-content:center — блок корректно смотрится и с одной карточкой
+   (сейчас, приложение бесплатное), и с двумя (когда вернётся платный доступ).
+   Жёсткие repeat(2,1fr) оставляли пустую половину строки при одной карточке. */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,340px));gap:24px;max-width:760px;margin:0 auto;justify-content:center}
 .price-card{background:var(--card);border:1px solid var(--card-brd);border-radius:18px;padding:34px 30px}
 .price-card.hi{border-color:var(--mint);box-shadow:0 0 0 1px var(--mint) inset, 0 20px 50px rgba(94,224,198,0.12)}
 .price-card h4{font-size:16px;font-weight:800;margin-bottom:6px}
@@ -184,15 +187,15 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
 <header>
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <img src="img/icon.png" alt="«До приёма врача»">
-      <span class="brand-txt">«До приёма врача»</span>
+      <img src="img/icon.png" alt="«Доктор ИИ»">
+      <span class="brand-txt">«Доктор ИИ»</span>
     </a>
     <nav class="links">
       <a href="#how">Как работает</a>
       <a href="#features">Возможности</a>
       <a href="#screens">Экраны</a>
-      <a href="#pricing">Тарифы</a>
-      <a href="#waitlist" class="btn-nav">Ранний доступ</a>
+      <a href="#pricing">Стоимость</a>
+      <a href="https://www.rustore.ru/catalog/app/com.omdigital.doctor_app" class="btn-nav" target="_blank" rel="noopener">Установить</a>
     </nav>
     <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
@@ -202,11 +205,11 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><span class="dot"></span> Скоро в RuStore</div>
+      <div class="eyebrow"><span class="dot"></span> Уже в RuStore</div>
       <h1>Симптомы понятны за <span class="grad">30 секунд</span>, а не после часа в интернете</h1>
       <p class="lead">Опишите словами, что беспокоит, или приложите фото анализа — приложение на ИИ разберёт ситуацию простым языком и подскажет, что делать дальше и к какому врачу идти.</p>
       <div class="hero-cta">
-        <a href="#waitlist" class="btn-primary">Получить ранний доступ →</a>
+        <a href="https://www.rustore.ru/catalog/app/com.omdigital.doctor_app" class="btn-primary" target="_blank" rel="noopener">Установить из RuStore →</a>
         <a href="#how" class="btn-ghost">Как это работает ↓</a>
       </div>
       <div class="trust-row">
@@ -217,7 +220,7 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
     </div>
     <div class="hero-visual">
       <div class="phone-glow"></div>
-      <div class="phone-frame floaty"><img src="img/consultation-teal.png" alt="Экран консультации «До приёма врача»"></div>
+      <div class="phone-frame floaty"><img src="img/consultation-teal.png" alt="Экран консультации «Доктор ИИ»"></div>
     </div>
   </div>
 </section>
@@ -279,8 +282,8 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
         <div class="cap">Тема <b>«Синяя»</b></div>
       </div>
       <div class="shot-card">
-        <img src="img/history.png" alt="История консультаций">
-        <div class="cap">Экран <b>«История»</b></div>
+        <img src="img/history.png" alt="Экран «Как это работает»">
+        <div class="cap">Экран <b>«Как это работает»</b></div>
       </div>
       <div class="shot-card">
         <img src="img/consultation-dark.png" alt="Тёмная тема">
@@ -300,11 +303,11 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
       <div class="safety-grid">
         <div>
           <h3>🔒 Ваши данные — только ваши</h3>
-          <p>Симптомы, файлы анализов и история консультаций хранятся локально на устройстве. Мы не передаём и не продаём личные медицинские данные третьим лицам.</p>
+          <p>История консультаций хранится на вашем телефоне, а не в чужом облаке. Текст запроса и приложенный файл уходят на наш сервер только на время разбора — иначе разбирать было бы нечем — и не используются ни для рекламы, ни для передачи третьим лицам. Подробно — в <a href="https://om-digital.ru/app-privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a>.</p>
         </div>
         <div>
           <h3>🩺 Это помощник, а не диагноз</h3>
-          <p>«До приёма врача» помогает сориентироваться и подготовиться к визиту к врачу — он не ставит диагнозы и не заменяет медицинскую консультацию.</p>
+          <p>«Доктор ИИ» помогает сориентироваться и подготовиться к визиту к врачу — он не ставит диагнозы и не заменяет медицинскую консультацию.</p>
           <div class="emergency">Если ситуация похожа на неотложную — приложение прямо скажет об этом. Также помните: <b>103</b> (скорая) и <b>112</b> (единый номер экстренных служб) работают всегда.</div>
         </div>
       </div>
@@ -315,40 +318,40 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
 <section id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-lbl">Тарифы</div>
-      <h2>Начните бесплатно</h2>
-      <p>Первая версия выходит полностью бесплатной. Подписку добавим позже, отдельным обновлением — цена уже определена, но на старте платить будет не за что.</p>
+      <div class="section-lbl">Стоимость</div>
+      <h2>Начать можно бесплатно</h2>
+      <p>Первые пять разборов — без регистрации и без привязки карты. Дальше доступ открывается разовым платежом, а не подпиской.</p>
     </div>
     <div class="price-grid">
       <div class="price-card hi">
-        <h4>Бесплатный план — доступен на старте</h4>
+        <h4>Первые пять разборов</h4>
         <div class="amt">0 ₽</div>
-        <ul><li>5 первых консультаций</li><li>Полный ИИ-разбор</li><li>История сохраняется</li></ul>
+        <ul><li>Без регистрации и карты</li><li>Полный ИИ-разбор</li><li>История сохраняется</li></ul>
       </div>
       <div class="price-card">
-        <h4>Подписка — появится позже</h4>
-        <div class="amt">199 ₽ <span>/ мес, планируется</span></div>
-        <ul><li>Безлимитные консультации</li><li>Полная история</li></ul>
+        <h4>Дальше — доступ на 30 дней</h4>
+        <div class="amt">199 ₽ <span>/ 30 дней</span></div>
+        <ul><li>Без ограничений по числу обращений</li><li>Разовый платёж, автопродления нет</li><li>Оплата картой или через СБП</li></ul>
       </div>
     </div>
-    <p class="price-note">На старте приложение бесплатное: подписку оформить нельзя, оплата в нём не подключена. Появится в одном из следующих обновлений.</p>
+    <p class="price-note">Деньги сами не спишутся: когда 30 дней закончатся, приложение просто предложит оплатить снова — решать вам. Оплата проходит на защищённой странице ЮKassa, данные карты через приложение не проходят. Кассовый чек приходит на почту.</p>
   </div>
 </section>
 
 <section id="waitlist">
   <div class="wrap">
     <div class="waitlist">
-      <h2>Узнайте о запуске первыми</h2>
-      <p>Оставьте контакт — напишем, как только приложение станет доступно для скачивания, и дадим ранний доступ до официального релиза.</p>
+      <h2>Остались вопросы?</h2>
+      <p>Напишите нам: разберёмся с установкой, ответим про оплату и возврат, выслушаем, чего в приложении не хватает. Отвечаем на каждое обращение.</p>
       <form action="https://formsubmit.co/newlife2506@yandex.ru" method="POST">
-        <input type="hidden" name="_subject" value="Ранний доступ — «До приёма врача»">
+        <input type="hidden" name="_subject" value="Вопрос по приложению «Доктор ИИ»">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <div class="form-row">
           <input type="text" name="name" placeholder="Ваше имя" required>
           <input type="text" name="contact" placeholder="Telegram или email" required>
         </div>
-        <button type="submit" class="btn-submit">Записаться на ранний доступ →</button>
+        <button type="submit" class="btn-submit">Отправить вопрос →</button>
       </form>
       <div class="form-note">Никакого спама — только одно сообщение о запуске.</div>
     </div>
@@ -357,7 +360,7 @@ footer a{color:var(--mint);text-decoration:none;font-weight:700}
 
 <footer>
   <div class="wrap">
-    «До приёма врача» &nbsp;·&nbsp; Разработано командой <a href="https://om-digital.ru" target="_blank" rel="noopener">OM-Digital</a> &nbsp;·&nbsp; © 2026
+    «Доктор ИИ» &nbsp;·&nbsp; Разработано командой <a href="https://om-digital.ru" target="_blank" rel="noopener">OM-Digital</a> &nbsp;·&nbsp; © 2026
   </div>
 </footer>
 
