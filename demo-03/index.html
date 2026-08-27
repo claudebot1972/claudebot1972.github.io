@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Субсидиарная ответственность в 2026 году — привлечение и защита</title>
+<meta name="description" content="Субсидиарная ответственность в 2026 году: кого признают контролирующим лицом, основания и презумпции, субсидиарка вне банкротства, сроки и рабочие способы защиты. Разбор с опорой на главу III.2 Закона о банкротстве и практику Верховного Суда.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e1e4b'/%3E%3Cpath d='M32 12l16 6v14c0 11-7 17-16 20-9-3-16-9-16-20V18z' fill='none' stroke='%23e63946' stroke-width='4'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#202020; --ink-soft:#5c5c5c; --ink-dim:#8b8b8b;
+  --violet:#2e1e4b; --violet-2:#3d2a63; --violet-line:#4a3670;
+  --red:#e63946; --red-dark:#ca1616; --red-deep:#ae1111;
+  --bg:#ffffff; --bg-soft:#f8f8f8; --bg-line:#e6e6e6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);
+     font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+a{color:var(--red-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---- пометка макета ---- */
+.demobar{background:#fff4d6;border-bottom:1px solid #e8d391;color:#5a4409;
+         font-size:13.5px;line-height:1.5;padding:9px 0}
+.demobar b{color:#3f2f04}
+
+/* ---- шапка ---- */
+header{background:var(--violet);color:#fff}
+/* только вертикальные отступы: сокращённый padding обнулил бы боковые от .wrap */
+.hdr{display:flex;align-items:center;gap:28px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.brand{font-family:'PT Serif',Georgia,serif;font-size:17px;line-height:1.25;max-width:290px;color:#fff}
+.brand span{display:block;font-family:Roboto,Arial,sans-serif;font-size:11.5px;letter-spacing:.14em;
+            text-transform:uppercase;color:#b3a6cd;margin-top:5px}
+nav{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#e7e2f2;font-size:14.5px}
+nav a:hover{color:#fff;text-decoration:none;border-bottom:1px solid var(--red)}
+.phone{font-size:18px;font-weight:700;color:#fff;white-space:nowrap}
+.phone small{display:block;font-size:11.5px;font-weight:400;color:#b3a6cd}
+
+/* ---- hero ---- */
+.hero{background:linear-gradient(160deg,var(--violet) 0%,var(--violet-2) 62%,#4a3072 100%);
+      color:#fff;padding:64px 0 58px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-90px;width:460px;height:460px;
+             border:70px solid rgba(255,255,255,.035);border-radius:50%}
+.crumbs{font-size:13px;color:#b3a6cd;margin-bottom:22px}
+.crumbs a{color:#b3a6cd}
+.hero h1{font-family:'PT Serif',Georgia,serif;font-size:46px;line-height:1.16;margin:0 0 18px;
+         font-weight:700;max-width:900px;position:relative;z-index:1}
+.hero .lead{font-size:19px;line-height:1.6;color:#ded7ee;max-width:800px;position:relative;z-index:1}
+.facts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;position:relative;z-index:1}
+.fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+      border-radius:3px;padding:16px 20px;min-width:190px;flex:1}
+.fact b{display:block;font-size:26px;font-family:'PT Serif',Georgia,serif;color:#fff}
+.fact span{font-size:13.5px;color:#c5bcdd;line-height:1.45;display:block;margin-top:4px}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:15px;
+     letter-spacing:.03em;padding:15px 34px;border-radius:3px;border:0;cursor:pointer;
+     transition:background .18s}
+.btn:hover{background:var(--red-deep);text-decoration:none;color:#fff}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+
+/* ---- секции ---- */
+section{padding:58px 0}
+section.soft{background:var(--bg-soft)}
+h2{font-family:'PT Serif',Georgia,serif;font-size:33px;line-height:1.25;margin:0 0 10px;color:var(--violet)}
+h2 + .sub{color:var(--ink-soft);font-size:16.5px;margin:0 0 30px;max-width:820px}
+h3{font-size:19px;margin:0 0 8px;color:var(--ink);font-weight:700}
+.rule{width:64px;height:3px;background:var(--red);margin:0 0 24px}
+
+/* ---- карточки ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--bg-line);border-top:3px solid var(--red);
+      padding:26px 24px 24px;border-radius:2px}
+.card p{margin:0;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
+.card .tag{display:inline-block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+           color:var(--red-dark);font-weight:700;margin-bottom:9px}
+
+/* ---- списки ---- */
+ul.marks{list-style:none;padding:0;margin:0}
+ul.marks li{position:relative;padding:0 0 14px 30px;color:var(--ink-soft);font-size:16px}
+ul.marks li::before{content:"";position:absolute;left:6px;top:11px;width:7px;height:7px;
+                    background:var(--red);border-radius:50%}
+ul.marks li b{color:var(--ink)}
+
+/* ---- нумерованные шаги ---- */
+.steps{counter-reset:s;display:grid;gap:16px}
+.step{counter-increment:s;position:relative;padding:20px 24px 20px 74px;background:#fff;
+      border:1px solid var(--bg-line);border-radius:2px}
+.step::before{content:counter(s);position:absolute;left:22px;top:19px;width:34px;height:34px;
+              background:var(--violet);color:#fff;border-radius:50%;display:flex;
+              align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step p{margin:4px 0 0;color:var(--ink-soft);font-size:15.5px}
+
+/* ---- врезка закона ---- */
+.law{background:#fff;border-left:4px solid var(--violet);padding:20px 24px;margin:24px 0;
+     font-size:15.5px;color:var(--ink-soft)}
+.law b{color:var(--violet)}
+.warnbox{background:#fdf1f1;border-left:4px solid var(--red);padding:20px 24px;margin:24px 0;
+         font-size:15.5px;color:#6b2b2b}
+.warnbox b{color:var(--red-deep)}
+
+/* ---- таблица цен ---- */
+table.price{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+table.price th{background:var(--violet);color:#fff;text-align:left;padding:15px 18px;
+               font-size:14px;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+table.price td{padding:15px 18px;border-bottom:1px solid var(--bg-line);color:var(--ink-soft)}
+table.price td:last-child{white-space:nowrap;font-weight:700;color:var(--ink);text-align:right}
+table.price tr:last-child td{border-bottom:0}
+.note{font-size:13.5px;color:var(--ink-dim);margin-top:14px}
+
+/* ---- FAQ ---- */
+details{background:#fff;border:1px solid var(--bg-line);border-radius:2px;margin-bottom:12px}
+details[open]{border-color:#d3cbe4}
+summary{cursor:pointer;padding:18px 22px;font-weight:700;font-size:16.5px;color:var(--violet);
+        list-style:none;position:relative;padding-right:52px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:22px;top:15px;font-size:24px;font-weight:400;
+               color:var(--red);line-height:1}
+details[open] summary::after{content:"\2013"}
+details .body{padding:0 22px 20px;color:var(--ink-soft);font-size:15.5px}
+
+/* ---- CTA ---- */
+.cta{background:var(--violet);color:#fff;padding:56px 0}
+.cta h2{color:#fff}
+.cta .sub{color:#c9c0e0}
+.cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:26px;border-radius:3px}
+.form label{display:block;font-size:13px;color:#c9c0e0;margin:0 0 6px}
+.form input,.form textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);
+       background:rgba(0,0,0,.16);color:#fff;border-radius:2px;font-family:inherit;font-size:15px;
+       margin-bottom:16px}
+.form input::placeholder,.form textarea::placeholder{color:#8d84a6}
+.form .hint{font-size:12.5px;color:#a99fc4;margin:12px 0 0}
+.why li{color:#ded7ee}
+.why li::before{background:var(--red)}
+
+footer{background:#241739;color:#a79bc4;font-size:14.5px;padding:44px 0 30px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+footer h4{color:#fff;font-size:15px;margin:0 0 12px;font-weight:700}
+footer a{color:#c8bfe0;display:block;margin-bottom:7px}
+footer a:hover{color:#fff}
+.fbot{border-top:1px solid #3a2c54;margin-top:32px;padding-top:20px;font-size:13px;color:#8d81ab;
+      display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero h1{font-size:34px}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .fcols{grid-template-columns:1fr;gap:26px}
+  nav{display:none}
+  h2{font-size:27px}
+}
+
+/* ---- блок услуг: потоковая сетка, ни одной жёсткой координаты ---- */
+.uslugi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:30px}
+.uslugi__card{background:#fff;border:1px solid var(--bg-line);border-radius:4px;
+  padding:28px 30px 24px;display:flex;flex-direction:column;min-width:0}
+.uslugi__head{display:flex;align-items:flex-start;gap:18px;margin-bottom:14px}
+.uslugi__head h3{font-family:'PT Serif',Georgia,serif;font-size:21px;line-height:1.3;
+  color:var(--violet);margin:0;font-weight:700;flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.uslugi__pic{flex:0 0 132px;height:74px;border-radius:3px;background-size:cover;
+  background-position:center;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.uslugi__list{list-style:none;padding:0;margin:6px 0 0}
+.uslugi__list li{position:relative;padding:0 0 11px 24px;font-size:16px;line-height:1.55;
+  color:var(--ink);overflow-wrap:anywhere}
+.uslugi__list li:before{content:'';position:absolute;left:3px;top:9px;width:7px;height:7px;
+  background:var(--red);border-radius:50%}
+@media(max-width:900px){
+  .uslugi{grid-template-columns:1fr;gap:20px}
+  .uslugi__card{padding:24px 22px 20px}
+  .uslugi__head h3{font-size:19px}
+  .uslugi__pic{flex-basis:104px;height:60px}
+}
+@media(max-width:520px){
+  .uslugi__head{flex-direction:column;gap:12px}
+  .uslugi__pic{flex-basis:auto;width:100%;height:132px}
+}
+
+</style>
+</head>
+<body>
+
+<div class="demobar"><div class="wrap">
+  <b>Демонстрационный макет страницы.</b> Подготовлен для владельца сайта как образец вёрстки и подачи материала. Это не официальный сайт организации; форма заявки в макете не активна и данные никуда не отправляет.
+</div></div>
+
+<header>
+  <div class="wrap hdr">
+    <div class="brand">Центр разрешения корпоративных споров и&nbsp;конфликтов
+      <span>оценка и аудит бизнеса</span>
+    </div>
+    <nav>
+      <a href="#chto-izmenilos">2026 год</a>
+      <a href="#kdl">Кого привлекают</a>
+      <a href="#osnovaniya">Основания</a>
+      <a href="#zashchita">Защита</a>
+      <a href="#stoimost">Стоимость</a>
+    </nav>
+    <div class="phone">8 800 000-00-00<small>консультация по вашей ситуации</small></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="#">Главная</a> &nbsp;/&nbsp; <a href="#">Услуги</a> &nbsp;/&nbsp; Субсидиарная ответственность в 2026 году</div>
+    <h1>Субсидиарная ответственность в&nbsp;2026&nbsp;году</h1>
+    <p class="lead">Долг компании перестал быть только её долгом. Директор, учредитель и&nbsp;фактический бенефициар отвечают личным имуществом&nbsp;— квартирой, счетами, машиной. Разбираем, кого признают контролирующим лицом, какие аргументы защиты в&nbsp;2026&nbsp;году больше не&nbsp;работают и&nbsp;что делать, пока дело не&nbsp;дошло до&nbsp;суда.</p>
+    <div class="facts">
+      <div class="fact"><b>3 года</b><span>период до банкротства, за который проверяют контроль над должником</span></div>
+      <div class="fact"><b>2 млн ₽</b><span>порог долга для возбуждения банкротства юрлица</span></div>
+      <div class="fact"><b>Без срока</b><span>субсидиарный долг не списывается в личном банкротстве</span></div>
+      <div class="fact"><b>10 лет</b><span>предельный срок для требований по действиям КДЛ</span></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#zayavka">Разобрать мою ситуацию</a>
+      <a class="btn btn-ghost" href="#zashchita">Что можно успеть сделать</a>
+    </div>
+  </div>
+</div>
+
+
+<section id="uslugi" class="soft">
+  <div class="wrap">
+    <h2>Услуги специалистов по субсидиарной ответственности</h2>
+    <div class="rule"></div>
+    <p class="sub">В каких ситуациях мы помогаем нашим клиентам</p>
+    <div class="uslugi"><article class="uslugi__card"><div class="uslugi__head"><h3>Услуги юриста и адвоката по вопросам субсидиарной ответственности</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3761-6539-4432-b532-313961366366/-/cover/157x86/center/center/-/format/webp/photo.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Рекомендации юриста, консультации адвоката</li><li>Защита от субсидиарной ответственности</li><li>Привлечение к субсидиарной ответственности</li><li>Досудебное урегулирование вопросов с субсидиарной ответственностью</li><li>Уголовно-правовой анализ деятельности участников и руководителей</li><li>Представление в суде</li><li>Споры с сделками</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Защита от субсидиарной ответственности</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild6135-6434-4566-a336-383266643231/-/cover/157x86/center/center/-/format/webp/pobeda1.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Сбор доказательств, что вы предпринимали все необходимые меры</li><li>Соберём аргументы на опровержение</li><li>Комплексный подход</li><li>Участие на любой стадии дела</li><li>Защитим ваши права в суде</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Привлечение к субсидиарной ответственности</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3762-3332-4764-b566-333437653438/-/cover/157x86/center/center/-/format/webp/subsidiarnaya.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Взыщем долги при банкротстве</li><li>Возместим убытки</li><li>Привлечение собственников и других ответственных лиц</li><li>Решение вопросов с выгодой для вас</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Субсидиарная ответственность при банкротстве</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3439-6362-4163-b938-633132623863/-/cover/157x86/center/center/-/format/webp/853a392fe53c00d72920.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Защита и привлечение ответственных лиц к субсидиарной ответственности при банкротстве</li><li>Оспаривание сделок</li><li>Определим что могло привести к разорению предприятия</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Субсидиарная ответственность директора, учредителя</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3837-6538-4332-b331-393139613933/-/cover/157x86/center/center/-/format/webp/sdelki.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Защита и привлечение генерального директора, учредителя к субсидиарной ответственности</li><li>Оспаривание сделок, возмещение убытков</li><li>Защита сделок от оспаривания</li><li>Участие в спорах и судебных разбирательствах</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Уголовно - правовой анализ действий</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3666-3465-4634-a230-336565336238/-/cover/157x86/center/center/-/format/webp/advokat6.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Проверим достоверность ведения бухгалтерского учёта</li><li>Выявим и проведём анализ налоговых рисков</li><li>Проведём полноценный анализ состояния бизнеса на текущий момент</li><li>Определим что могло привести к разорению предприятия</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Анализ финансовой отчётности и бухучёта</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3365-6263-4135-b931-306135613435/-/cover/157x86/center/center/-/format/webp/photo.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Проверки активов, финансовой отчётности</li><li>Сбор доказательной базы</li><li>Определение ответственности учредителя и генерального директора</li><li>Аудит и аналитика документов организации</li><li>Определим текущее положение дел в компании</li><li>Оценим возможные правовые и финансовые риски при сделках</li><li>Проверка контрагентов, партнёров полная</li><li>Аудиторские проверки по требованию банков, партнёров, кредитных организаций, госструктур, инвесторов</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Субсидиарная ответственность по налогам</h3><div class="uslugi__pic" style="background-image:url('https://optim.tildacdn.com/tild3865-3765-4564-b464-323730303737/-/cover/157x86/center/center/-/format/webp/nalog2.jpg.webp')" role="presentation"></div></div><ul class="uslugi__list"><li>Выявление рисков привлечения к субсидиарной ответственности по налогам</li><li>Помощь собственникам выйти из бизнеса</li><li>Разрешение вопросов с долями</li><li>Участие в спорах с ФНС</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Защита сделок от оспаривания</h3></div><ul class="uslugi__list"><li>Оценка финансового состояния контрагента</li><li>Оценка имущества</li><li>Исключение мошеннических схем</li><li>Мнимые и притворные сделки</li><li>Правильное оформление сделок</li></ul></article><article class="uslugi__card"><div class="uslugi__head"><h3>Представление в суде</h3></div><ul class="uslugi__list"><li>Минимизация рисков в результате подготовительных мероприятий</li><li>Комплексный подход</li><li>Адвокатская и юридическая защита</li></ul></article></div>
+  </div>
+</section>
+
+<section id="chto-izmenilos">
+  <div class="wrap">
+    <h2>Что изменилось к 2026 году</h2>
+    <div class="rule"></div>
+    <p class="sub">Сам закон за последний год почти не менялся — изменилось то, как его читают суды. Четыре привычные линии защиты перестали срабатывать, и именно на них до сих пор рассчитывает большинство собственников.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Больше не работает</div>
+        <h3>«Компанию исключили из ЕГРЮЛ — спрашивать не с кого»</h3>
+        <p>Исключение недействующего юрлица налоговой — вынужденная мера государства, а не законный способ закрыть бизнес. Она не заменяет ликвидацию и не освобождает участников от ответственности за брошенные долги.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Больше не работает</div>
+        <h3>«Я вышел из состава участников»</h3>
+        <p>Формальный выход из ООО незадолго до краха не обрывает связь с компанией. Суд смотрит на фактический контроль в период, когда принимались решения, а не на дату записи в реестре.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Больше не работает</div>
+        <h3>«Долг признали безнадёжным и списали»</h3>
+        <p>Если безнадёжность возникла не сама по себе, а из-за действий самого должника и его руководства, списанная задолженность может быть вменена контролирующим лицам.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Новое понятие</div>
+        <h3>«Брошенное юридическое лицо»</h3>
+        <p>Компания, которая формально ещё в реестре, но деятельность прекратила и ждёт принудительного исключения. Само по себе такое состояние суды рассматривают как недобросовестное поведение владельцев.</p>
+      </div>
+    </div>
+    <div class="warnbox"><b>Практический вывод.</b> Если у компании есть долги, «тихо бросить» её теперь дороже, чем закрыть по правилам. Официальная ликвидация или банкротство — даже упрощённое — оставляют управляемую процедуру, а брошенная компания оставляет её кредиторам и налоговой.</div>
+  </div>
+</section>
+
+<section class="soft" id="kdl">
+  <div class="wrap">
+    <h2>Кого признают контролирующим лицом</h2>
+    <div class="rule"></div>
+    <p class="sub">Круг ответственных шире, чем «директор и владелец». Закон говорит о лице, которое имело фактическую возможность определять действия должника — в течение трёх лет до подачи заявления о банкротстве.</p>
+    <ul class="marks">
+      <li><b>Генеральный директор</b> — в том числе бывший, если решения принимались в его период, и в том числе номинальный: статус «подписывал что дали» сам по себе от ответственности не спасает, он лишь может её снизить, если раскрыть реального бенефициара.</li>
+      <li><b>Участники и акционеры</b> — не только владельцы контрольного пакета. Значение имеет реальное влияние на решения, а не размер доли сам по себе.</li>
+      <li><b>Фактический бенефициар</b> — человек, которого нет ни в одном документе, но чьи указания исполнялись. Доказывается перепиской, движением денег, показаниями сотрудников.</li>
+      <li><b>Главный бухгалтер и финансовый директор</b> — когда они участвовали в схемах вывода активов или искажали отчётность, а не просто вели учёт.</li>
+      <li><b>Аффилированные компании и родственники</b> — если на них выводили имущество или через них шли расчёты.</li>
+      <li><b>Ликвидатор и арбитражный управляющий</b> — за собственные действия в процедуре.</li>
+    </ul>
+    <div class="law"><b>Основание.</b> Понятие контролирующего должника лица и презумпции контроля — статья 61.10 Федерального закона «О несостоятельности (банкротстве)» № 127-ФЗ. Разъяснения по применению главы III.2 — постановление Пленума Верховного Суда РФ № 53 от 21.12.2017.</div>
+  </div>
+</section>
+
+<section id="osnovaniya">
+  <div class="wrap">
+    <h2>Основания для привлечения</h2>
+    <div class="rule"></div>
+    <p class="sub">Оснований по закону два, и защита от них строится по-разному. Путать их нельзя: во втором случае объём ответственности считается иначе и часто оказывается меньше, чем требует кредитор.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Статья 61.11</div>
+        <h3>Невозможность полностью погасить требования кредиторов</h3>
+        <p>Классическая субсидиарка: действия или бездействие контролирующего лица привели к тому, что расплатиться с кредиторами компания уже не может. Отвечает по всему непогашенному реестру.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Статья 61.12</div>
+        <h3>Неподача заявления о собственном банкротстве</h3>
+        <p>Руководитель обязан сам пойти в суд, когда признаки неплатёжеспособности налицо. Промолчал и продолжил набирать обязательства — отвечает по долгам, возникшим после этого момента.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:34px">Презумпции: когда доказывать придётся вам</h3>
+    <p class="sub" style="margin-bottom:18px">В этих ситуациях закон исходит из вины контролирующего лица, и бремя опровержения перекладывается на него. Это ключевая причина, по которой пассивная позиция в таком споре проигрышна.</p>
+    <ul class="marks">
+      <li><b>Существенно убыточные сделки</b> — вывод активов, продажа по заниженной цене, сделки с аффилированными лицами.</li>
+      <li><b>Документы бухучёта утрачены или искажены</b> — так, что невозможно сформировать конкурсную массу. «Документы забрал прежний директор» без доказательств не помогает.</li>
+      <li><b>Более половины реестра — требования из правонарушения</b>, в том числе налоговые доначисления по итогам проверки.</li>
+      <li><b>Недостоверные сведения в ЕГРЮЛ и ЕФРСДЮЛ</b> на дату возбуждения дела — адрес, руководитель, участники.</li>
+      <li><b>Не переданы документы</b> арбитражному управляющему после открытия конкурсного производства.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <h2>Субсидиарная ответственность без банкротства</h2>
+    <div class="rule"></div>
+    <p class="sub">Самое частое заблуждение: «раз банкротства не было, то и субсидиарки быть не может». Ровно наоборот — именно этот сценарий сегодня встречается чаще всего у небольших компаний.</p>
+    <ul class="marks">
+      <li><b>Компанию исключили из ЕГРЮЛ как недействующую.</b> Кредитор вправе взыскать долг напрямую с директора и участников, если неисполнение обязательства связано с их недобросовестными или неразумными действиями — пункт 3.1 статьи 3 Закона об ООО.</li>
+      <li><b>Дело о банкротстве прекращено из-за отсутствия денег на процедуру.</b> Требование о привлечении к субсидиарной ответственности рассматривается вне рамок дела — статья 61.19 Закона о банкротстве.</li>
+      <li><b>Заявление о банкротстве возвращено</b> по той же причине — недостаточно средств на финансирование.</li>
+    </ul>
+    <div class="law"><b>Что это значит на практике.</b> Кредитору не нужно тянуть дорогую процедуру банкротства, чтобы добраться до личного имущества руководителя. Достаточно, что компания брошена и долг остался непогашенным.</div>
+  </div>
+</section>
+
+<section id="zashchita">
+  <div class="wrap">
+    <h2>Как защищаться</h2>
+    <div class="rule"></div>
+    <p class="sub">Защита в таком споре — работа с доказательствами, а не с формулировками. Ниже порядок, который мы применяем; шаги 1–3 имеют смысл до того, как заявление подано, и именно их чаще всего пропускают.</p>
+    <div class="steps">
+      <div class="step"><h3>Оценить реальный периметр риска</h3>
+        <p>Кто по документам и по факту принимал решения, за какой период, какие сделки могут быть признаны существенно убыточными. Часто выясняется, что часть требований выходит за пределы периода контроля.</p></div>
+      <div class="step"><h3>Восстановить и закрепить документы</h3>
+        <p>Бухгалтерская отчётность, первичка, акты приёма-передачи при смене директора. Отсутствие документов — самостоятельная презумпция вины, а не нейтральное обстоятельство.</p></div>
+      <div class="step"><h3>Показать деловую цель спорных сделок</h3>
+        <p>Рыночность цены, экономический смысл, отсутствие аффилированности. Одно заключение оценщика здесь весит больше, чем десять страниц объяснений.</p></div>
+      <div class="step"><h3>Доказать добросовестность и разумность</h3>
+        <p>План выхода из кризиса, переговоры с кредиторами, попытки реструктуризации. Если руководитель действовал по разумному плану, суд может освободить его от ответственности.</p></div>
+      <div class="step"><h3>Оспорить размер требования</h3>
+        <p>По статье 61.12 отвечают только по обязательствам, возникшим после момента, когда следовало подать заявление. Правильно определённая дата нередко сокращает сумму в разы.</p></div>
+      <div class="step"><h3>Проверить срок исковой давности</h3>
+        <p>Общий срок — три года со дня, когда заявитель узнал или должен был узнать об основаниях. Пропуск срока — самостоятельное основание для отказа.</p></div>
+    </div>
+    <div class="warnbox"><b>Чего делать не стоит.</b> Переписывать имущество на родственников после появления признаков банкротства — такие сделки оспариваются в первую очередь и превращаются в дополнительный аргумент недобросовестности. Субсидиарный долг, в отличие от большинства других, не списывается и при личном банкротстве контролирующего лица.</div>
+  </div>
+</section>
+
+<section class="soft" id="stoimost">
+  <div class="wrap">
+    <h2>Стоимость услуг по субсидиарной ответственности*</h2>
+    <div class="rule"></div>
+    <p class="sub">Чтобы рассчитать стоимость, достаточно заказать первичную консультацию — по ней уже видно, какой объём работы нужен именно в вашей ситуации.</p>
+    <table class="price">
+      <tr><th>Услуга</th><th style="text-align:right">Стоимость</th></tr>
+      <tr><td>Первичная устная консультация по телефону, WhatsApp, Telegram</td><td>бесплатно</td></tr>
+      <tr><td>Консультация адвоката или юриста в нашем офисе либо офисе клиента</td><td>от 5 000 ₽</td></tr>
+      <tr><td>Видеоконференция по вашим вопросам с группой специалистов</td><td>от 12 000 ₽</td></tr>
+      <tr><td>Правовой анализ ситуации и оценка риска привлечения к субсидиарной ответственности</td><td>от 35 000 ₽</td></tr>
+      <tr><td>Представление интересов в суде по обособленному спору</td><td>от 120 000 ₽</td></tr>
+    </table>
+    <p class="note">* Стоимость услуг определяется после ознакомления с документами. Цифры в макете приведены как образец оформления блока и не являются офертой.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Частые вопросы</h2>
+    <div class="rule"></div>
+    <details open><summary>Могут ли привлечь, если я был номинальным директором?</summary>
+      <div class="body">Да, номинальный статус сам по себе не освобождает от ответственности. Но он может её существенно снизить, если номинальный руководитель раскроет реального бенефициара и поможет найти скрытое имущество должника.</div></details>
+    <details><summary>Компанию давно исключили из ЕГРЮЛ. Меня это защищает?</summary>
+      <div class="body">Нет. Исключение недействующего юрлица — принудительная мера налогового органа, а не законный способ закрыть бизнес с долгами. Кредитор вправе предъявить требование напрямую к директору и участникам по пункту 3.1 статьи 3 Закона об ООО.</div></details>
+    <details><summary>Отвечаю ли я по долгам компании, если владел маленькой долей?</summary>
+      <div class="body">Размер доли — не решающий фактор. Суд оценивает фактическую возможность определять действия компании: участие в принятии ключевых решений, получение выгоды от спорных сделок, влияние на назначение руководителя.</div></details>
+    <details><summary>Спишется ли субсидиарный долг, если я сам стану банкротом?</summary>
+      <div class="body">Нет. Требования о привлечении к субсидиарной ответственности относятся к тем, от которых гражданин не освобождается по итогам собственного банкротства.</div></details>
+    <details><summary>Переходит ли такой долг по наследству?</summary>
+      <div class="body">Да, обязательство носит имущественный характер и входит в состав наследства — наследники отвечают в пределах стоимости принятого имущества.</div></details>
+    <details><summary>С какого момента считать срок исковой давности?</summary>
+      <div class="body">Три года со дня, когда заявитель узнал или должен был узнать об основаниях для привлечения. При этом установлены предельные сроки, привязанные к признанию должника банкротом и к моменту совершения действий контролирующего лица, — конкретную дату в каждом деле нужно считать отдельно, это одна из самых спорных частей таких процессов.</div></details>
+  </div>
+</section>
+
+<div class="cta" id="zayavka">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div>
+        <h2>Первичная консультация по вопросам субсидиарной ответственности</h2>
+        <div class="rule"></div>
+        <p class="sub">5 причин обсудить ситуацию со специалистом до того, как подано заявление:</p>
+        <ul class="marks why">
+          <li>Понять реальный риск, а не жить в тревоге по слухам из интернета</li>
+          <li>Успеть собрать документы, пока они доступны и никем не изъяты</li>
+          <li>Оценить, какие сделки уязвимы, и не совершить новых ошибок</li>
+          <li>Определить период ответственности — от него зависит сумма</li>
+          <li>Выстроить позицию заранее, а не за неделю до заседания</li>
+        </ul>
+      </div>
+      <div class="form">
+        <label for="n">Ваше имя</label>
+        <input id="n" type="text" placeholder="Как к вам обращаться" disabled>
+        <label for="p">Телефон или мессенджер</label>
+        <input id="p" type="text" placeholder="+7 ___ ___-__-__" disabled>
+        <label for="q">Кратко о ситуации</label>
+        <textarea id="q" rows="4" placeholder="Компания, стадия, что уже произошло" disabled></textarea>
+        <button class="btn" type="button" disabled style="width:100%;opacity:.65;cursor:not-allowed">Записаться на консультацию</button>
+        <p class="hint">В демонстрационном макете форма отключена и данные никуда не передаются. На рабочей странице сюда подключается приём заявок и уведомление в мессенджер.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <h4>Центр разрешения корпоративных споров и конфликтов</h4>
+        <p style="margin:0;max-width:420px">Оценка и аудит бизнеса, защита долей и активов, сопровождение корпоративных конфликтов и споров о привлечении к ответственности.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="#chto-izmenilos">2026 год</a>
+        <a href="#kdl">Кого привлекают</a>
+        <a href="#osnovaniya">Основания</a>
+        <a href="#zashchita">Защита</a>
+      </div>
+      <div>
+        <h4>Ещё</h4>
+        <a href="#stoimost">Стоимость услуг</a>
+        <a href="#zayavka">Консультация</a>
+        <a href="#">Карта сайта</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Центр корпоративных споров</span>
+      <span>Демонстрационный макет страницы. Материал носит справочный характер и не заменяет консультацию по конкретному делу.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
